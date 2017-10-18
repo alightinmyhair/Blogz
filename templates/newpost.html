@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .error{color: red; font-family: cursive; }
+</style>
+
+    <h1>Add a Blog Entry</h1>
+    <form method='post'>
+        <label>
+            Title for the new blog:
+            <br><input type="text" name='titleblog' value = '{{titleblog}}'/></br>
+        </label>
+        <p class="error">{{titleblog_error}}</p>
+        <p><label>
+            Your new blog:
+            <br><textarea name='blogbody'>{{blogbody}}</textarea></br>
+        </label></p>
+        <p class="error">{{blogbody_error}}</p>
+        <p><input type="submit" value='Add Entry' /></p>
+    </form>
+    
+        <!-- <h2>Blog Posts</h2>
+        <ul>
+            {% for blog in blogs %}
+            <h3>{{blog.title}}</h3>
+            <h5>{{blog.body}}</h5>
+            {% endfor %}
+        </ul> -->
+
+{% endblock %}
