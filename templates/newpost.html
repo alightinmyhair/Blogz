@@ -1,23 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style>
-    .error{color: red; font-family: cursive; }
-</style>
 
-    <h1>Add a Blog Entry</h1>
+
+    <h2>Add a Blog Entry</h2>
     <form method='post'>
-        <label>
-            Title for the new blog:
+        <p><label>
+            Title for your new blog:
             <br><input type="text" name='titleblog' value = '{{titleblog}}'/></br>
-        </label>
+        </label></p>
         <p class="error">{{titleblog_error}}</p>
         <p><label>
             Your new blog:
             <br><textarea name='blogbody'>{{blogbody}}</textarea></br>
         </label></p>
         <p class="error">{{blogbody_error}}</p>
-        <p><input type="submit" value='Add Entry' /></p>
+        <input type="submit" value='Add Entry' />
+        <br></br>
     </form>
     
         <!-- <h2>Blog Posts</h2>

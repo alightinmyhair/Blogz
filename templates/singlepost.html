@@ -1,18 +1,13 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
 
-<br></br>
-<h1>Blog Posts</h1>
-<ul>
+{% block content %}
     {% for blog in blogs %}
     {% for user in users %}
-        {% if blog.owner_id == user.id %}
-            <li><p><h3><a href="/singlepost?blog_id={{blog.id}}">{{blog.title}}</a></h3></p></li>
+        {% if blog_id == blog.id and blog.owner_id == user.id %}
+            <p><h2>{{blog.title}}</h2></p>
             <p>{{blog.body}}</p>
             <p>Written by <a href="/post?user_id={{blog.owner_id}}">{{user.username}}</a></p>
-            <br></br>
         {% endif %}
     {% endfor %}
     {% endfor %}
-</ul>
-
 {% endblock %}

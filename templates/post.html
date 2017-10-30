@@ -1,8 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-    <center><h2>{{titleblog}}</h2></center>
-    <center><h4>{{blogbody}}</h4></center>
-
+    {% for blog in blogs %}
+    {% for user in users %}
+        {% if blog.owner_id == user_id and user.id == user_id %}
+            <center><p><h3><a href="/singlepost?blog_id={{blog.id}}">{{blog.title}}</a></h3></p></center>
+            <center><p>{{blog.body}}</p></center>
+            <center><p>Written by <a href="/post?user_id={{blog.owner_id}}">{{user.username}}</a></p></center>
+            <br></br>
+        {% endif %}
+        {% if blog_id == blog.id and blog.owner_id == user.id %}
+            <p><h2><a href="/post?blog_id={{blog.id}}">{{blog.title}}</a></h2></p>
+            <p>{{blog.body}}</p>
+            <p>Written by <a href="/post?user_id={{blog.owner_id}}">{{user.username}}</a></p>
+            <br></br>
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
 {% endblock %}
+
+
+

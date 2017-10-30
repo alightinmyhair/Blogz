@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br></br>
+<h1 class = "space">Sign-in to your Blog :)</h1>
+    <form method='POST'>
+        <strong><label for ="username">Username
+            <input id="username" type="text" name="username" value='{{username}}'/>
+        </label></strong>
+        <strong><label for ="password">Password
+            <input id ="password" type="password" name="password"/>
+        </label></strong>
+        <p><input type="submit"/></p>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+            {% for category,message in messages %}
+            <li class="{{category}}">{{message}}</li>
+            {% endfor %}
+        </ul>
+    {% endwith %}
+    <p class = "space">Don't have an account? <a href = "/signup">Create one!</a></p>
+    <br></br>
+
+{% endblock %}

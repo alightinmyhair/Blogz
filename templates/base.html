@@ -2,12 +2,72 @@
 <html>
     <head>
         <title>{{title}}</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            { }
+            .error {
+                color: #A2174A ;
+                font-family: cursive;
+            }
+            * {background-color:#A8C8C5    ;
+                    font-family: calibri; Arial;
+                    
+                            }
+            span.local {float:right;}  
+             
+            span.navigation {float: left;
+                      ;
+            }
+            
+            nav a {padding: 30px;}
+            span.front {float: center;}
+
+            a {color:#8F1851   ;
+                font-size: 25px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+
+            a:visited {color: #127A96   ;
+            }
+
+            label{color: #07495A;
+
+            }
+
+            form{margin:50px;}
+
+            h1{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+            font-size: 150px;
+            color: #5A7A0E   ;
+            margin: 50px;}
+
+            h2 {color: #5A7A0E   ;
+                margin: 50px;
+            }
+
+            li{color: #07495A;}
+
+            p {color: #5A7A0E    ;
+            font-size: 18px;}
+
+            html {background-image: url("https://img0.etsystatic.com/203/2/13083559/il_340x270.1281830204_4toi.jpg");
+                    background-position: center;
+                    background-repeat: repeat;}
+            .space {margin: 50px;}
+        </style>
     </head>
 <body>
-    <nav>
-        <a href="/blog">Main Blog Page</a>     |
-        <a href="/newpost">Add a Blog Entry</a>
-    </nav>
+    <nav><center>
+        <span class = "navigation">
+        <a class="navigation" href="/home">Home</a>   
+        <a class="navigation" href="/login">Login</a> 
+        <a class="navigation" href="/newpost">Add a Blog Entry</a>                
+        <a class="navigation" href="/blog">Main Blog Page</a>   
+        </span>       
+        <span class = "local">
+        <a class="navigation" href="/logout">Logout</a>
+        </span>
+    </center></nav>
+    <br></br>
 
     {% block content %}
     {% endblock %}
